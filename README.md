@@ -13,12 +13,3 @@ Backward Chaining: This goal-driven technique begins with a hypothesis and backt
 
 These align with the paper's focus on rule-based frameworks, where forward chaining supports synthesis tasks (e.g., planning) and backward chaining shines in analysis (e.g., diagnosis). Hybrid systems often merge both for robust reasoning, adding fuzzy logic for handling uncertainty, as in the FLES example for pavement maintenance.
 
-# My Case Study: Hybrid Expert System for Heart Disease Risk Assessment Using Kaggle Dataset
-Problem Description
-Heart disease remains a major global health concern, with factors like age, cholesterol, blood pressure, and exercise-induced angina influencing diagnoses. While experts traditionally handle assessments, I developed an ES to automate initial risk evaluations using patient data. For this case study, I utilized the full Heart Disease UCI dataset from Kaggle (303 instances, 14 attributes) for prediction and evaluation.
-My system incorporates:
-
-Knowledge Base: Rules based on medical heuristics (e.g., cholesterol >240 mg/dL indicates a risk factor).
-Inference Engine: Forward chaining to derive intermediate risks from inputs (e.g., infer obesity from age and cholesterol). Backward chaining to confirm overall risk by checking hypotheses (e.g., prompt for missing symptoms).
-Fuzzy Logic: Manages ambiguity, such as fuzzifying age into "young" (low risk) or "elderly" (high risk) with membership degrees.
-Hybrid Elements: Combines rule-based logic with statistical metrics (support, confidence) for rule validation, using pandas for handling the Kaggle dataset in batch predictions.
