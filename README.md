@@ -1,1 +1,24 @@
-# expert_decision_making
+# Expert Decision Making
+I examined the 2022 paper "Key Directions for Development of Modern Expert Systems" by Svitlana Sotnik, Zhanna Deineko, and Vyacheslav Lyashenko, published in the International Journal of Engineering and Information Systems. The paper delves into the evolution and current landscape of expert systems (ES) in artificial intelligence (AI), covering their applications, components, advantages, disadvantages, and a novel classification framework. It reviews recent ES developments from 2020-2022 across domains like diagnostics, production, and agriculture, and suggests future paths emphasizing hybrid integrations with fuzzy logic, neural networks, and rule-based approaches. In my report, I incorporate core concepts from the paper, such as forward and backward chaining in inference engines, and present a practical case study using a Python codebase for a heart disease risk assessment ES. This system tackles a real-world healthcare challenge by blending rule-based reasoning with fuzzy logic and data processing, evaluated on a full Kaggle dataset for prediction accuracy.
+# My Key Findings from the Paper
+I found that the paper portrays ES as interactive AI tools delivering expert-level guidance in controlled settings, with their adoption surging during the COVID-19 pandemic for remote decision support. Essential components include the knowledge base (storing facts and rules), inference engine (for reasoning), and user interface (for interaction). The authors introduce a nine-criterion classification, encompassing resource costs, application features, real-time connectivity, and integration levels, which I believe is useful for customizing ES designs.
+From my reading, advantages include elevated decision quality, uncertainty management, and cost savings via incremental builds. Disadvantages involve domain restrictions, potential flaws from erroneous rules, and inflexibility in dynamic environments. The paper surveys recent ES examples like NHDES for diagnostics, DeNNeS for cybersecurity (achieving 95.8% accuracy), and CBRBS for heart disease prediction (93.97% success), grouping them into analysis, synthesis, and combined categories.
+I noted that future directions advocate for hybrid ES with automated knowledge acquisition, improved interfaces, and machine learning fusions to expand utility in medicine, agriculture, and manufacturing.
+# My Explanation of Forward and Backward Chaining
+In expert systems, I understand that the inference engine employs chaining strategies to draw conclusions from the knowledge base.
+
+Forward Chaining: This is a data-driven method I see as starting with known facts and applying rules to deduce new information. It uses breadth-first search, fitting for real-time monitoring where the system queries "What happens next?" For instance, it's applied in fraud detection or alert systems. In practice, it iteratively processes inputs until no further facts arise, ideal for data-rich scenarios with unclear goals.
+
+Backward Chaining: This goal-driven technique begins with a hypothesis and backtracks to validate supporting facts through depth-first search with backtracking. It requests missing data, making it suitable for diagnostic fields like medical troubleshooting. I appreciate how this approach efficiently focuses on evidence for a particular outcome.
+
+These align with the paper's focus on rule-based frameworks, where forward chaining supports synthesis tasks (e.g., planning) and backward chaining shines in analysis (e.g., diagnosis). Hybrid systems often merge both for robust reasoning, adding fuzzy logic for handling uncertainty, as in the FLES example for pavement maintenance.
+
+# My Case Study: Hybrid Expert System for Heart Disease Risk Assessment Using Kaggle Dataset
+Problem Description
+Heart disease remains a major global health concern, with factors like age, cholesterol, blood pressure, and exercise-induced angina influencing diagnoses. While experts traditionally handle assessments, I developed an ES to automate initial risk evaluations using patient data. For this case study, I utilized the full Heart Disease UCI dataset from Kaggle (303 instances, 14 attributes) for prediction and evaluation.
+My system incorporates:
+
+Knowledge Base: Rules based on medical heuristics (e.g., cholesterol >240 mg/dL indicates a risk factor).
+Inference Engine: Forward chaining to derive intermediate risks from inputs (e.g., infer obesity from age and cholesterol). Backward chaining to confirm overall risk by checking hypotheses (e.g., prompt for missing symptoms).
+Fuzzy Logic: Manages ambiguity, such as fuzzifying age into "young" (low risk) or "elderly" (high risk) with membership degrees.
+Hybrid Elements: Combines rule-based logic with statistical metrics (support, confidence) for rule validation, using pandas for handling the Kaggle dataset in batch predictions.
